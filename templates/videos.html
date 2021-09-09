@@ -1,0 +1,270 @@
+{% extends 'base.html' %}
+
+{% block head %}
+
+<title>Search | KnowledgeTester</title>
+
+{% endblock %}
+
+{% block body %}
+
+<div class="container text-center">
+    <form method="POST">
+        <div class="col-md-4 offset-md-4">
+            <div class="input-group mb-3">
+                <input name="query" type="text" class="form-control" placeholder="Search ...">
+                <div class="input-group-append">
+                    <button class="btn btn-outline-info" type="submit"><i class="fa fa-search"></i></button>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+
+{% if videos|length != 0 %}
+
+<section>
+    <div class="container my-5">
+        <div class="card-group mb-4">
+            <div class="card mr-2">
+                <img src="{{ videos[0]['thumbNail'] }}" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <div>
+                        <img style="border-radius: 50%; height: 40px; width: 40px; border: 1px solid black;"
+                            src="{{ videos[0]['channelLogo'] }}" class="card-img-top" alt="logo">
+                        <span class="ml-2" style="font-size: 20px;">{{ videos[0]['channelName'] }}</span>
+                    </div>
+                    <hr>
+                    <h5 class="card-title">{{ videos[0]['title'] }}</h5>
+                    <p class="card-text">
+                        {{ videos[0]['description'] }}
+                    </p>
+                    <div class="text-center">
+                        
+                        <a href="{{ url_for('show_video', video_id=videos[0]['videoId']) }}" class="btn btn-success">Watch Now</a>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <small class="text-muted">Published on: {{ videos[0]['publishedAt'] }}</small>
+                </div>
+            </div>
+            <div class="card mr-2">
+                <img src="{{ videos[1]['thumbNail'] }}" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <div>
+                        <img style="border-radius: 50%; height: 40px; width: 40px; border: 1px solid black;"
+                            src="{{ videos[1]['channelLogo'] }}" class="card-img-top" alt="logo">
+                        <span class="ml-2" style="font-size: 20px;">{{ videos[1]['channelName'] }}</span>
+                    </div>
+                    <hr>
+                    <h5 class="card-title">{{ videos[1]['title'] }}</h5>
+                    <p class="card-text">
+                        {{ videos[1]['description'] }}
+                    </p>
+                    <div class="text-center">
+                        
+                        <a href="{{ url_for('show_video', video_id=videos[1]['videoId']) }}" class="btn btn-success">Watch Now</a>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <small class="text-muted">Published on: {{ videos[1]['publishedAt'] }}</small>
+                </div>
+            </div>
+            <div class="card">
+                <img src="{{ videos[2]['thumbNail'] }}" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <div>
+                        <img style="border-radius: 50%; height: 40px; width: 40px; border: 1px solid black;"
+                            src="{{ videos[2]['channelLogo'] }}" class="card-img-top" alt="logo">
+                        <span class="ml-2" style="font-size: 20px;">{{ videos[2]['channelName'] }}</span>
+                    </div>
+                    <hr>
+                    <h5 class="card-title">{{ videos[2]['title'] }}</h5>
+                    <p class="card-text">
+                        {{ videos[2]['description'] }}
+                    </p>
+                    <div class="text-center">
+                        
+                        <a href="{{ url_for('show_video', video_id=videos[2]['videoId']) }}" class="btn btn-success">Watch Now</a>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <small class="text-muted">Published on: {{ videos[2]['publishedAt'] }}</small>
+                </div>
+            </div>
+        </div>
+
+        <div class="card-group mb-4">
+            <div class="card mr-2">
+                <img src="{{ videos[3]['thumbNail'] }}" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <div>
+                        <img style="border-radius: 50%; height: 40px; width: 40px; border: 1px solid black;"
+                            src="{{ videos[3]['channelLogo'] }}" class="card-img-top" alt="logo">
+                        <span class="ml-2" style="font-size: 20px;">{{ videos[3]['channelName'] }}</span>
+                    </div>
+                    <hr>
+                    <h5 class="card-title">{{ videos[3]['title'] }}</h5>
+                    <p class="card-text">
+                        {{ videos[3]['description'] }}
+                    </p>
+                    <div class="text-center">
+                        
+                        <a href="{{ url_for('show_video', video_id=videos[3]['videoId']) }}" class="btn btn-success">Watch Now</a>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <small class="text-muted">Published on: {{ videos[3]['publishedAt'] }}</small>
+                </div>
+            </div>
+            <div class="card mr-2">
+                <img src="{{ videos[4]['thumbNail'] }}" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <div>
+                        <img style="border-radius: 50%; height: 40px; width: 40px; border: 1px solid black;"
+                            src="{{ videos[4]['channelLogo'] }}" class="card-img-top" alt="logo">
+                        <span class="ml-2" style="font-size: 20px;">{{ videos[4]['channelName'] }}</span>
+                    </div>
+                    <hr>
+                    <h5 class="card-title">{{ videos[4]['title'] }}</h5>
+                    <p class="card-text">
+                        {{ videos[4]['description'] }}
+                    </p>
+                    <div class="text-center">
+                        
+                        <a href="{{ url_for('show_video', video_id=videos[4]['videoId']) }}" class="btn btn-success">Watch Now</a>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <small class="text-muted">Published on: {{ videos[4]['publishedAt'] }}</small>
+                </div>
+            </div>
+            <div class="card">
+                <img src="{{ videos[5]['thumbNail'] }}" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <div>
+                        <img style="border-radius: 50%; height: 40px; width: 40px; border: 1px solid black;"
+                            src="{{ videos[5]['channelLogo'] }}" class="card-img-top" alt="logo">
+                        <span class="ml-2" style="font-size: 20px;">{{ videos[5]['channelName'] }}</span>
+                    </div>
+                    <hr>
+                    <h5 class="card-title">{{ videos[5]['title'] }}</h5>
+                    <p class="card-text">
+                        {{ videos[5]['description'] }}
+                    </p>
+                    <div class="text-center">
+                        
+                        <a href="{{ url_for('show_video', video_id=videos[5]['videoId']) }}" class="btn btn-success">Watch Now</a>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <small class="text-muted">Published on: {{ videos[5]['publishedAt'] }}</small>
+                </div>
+            </div>
+        </div>
+
+        <div class="card-group mb-4">
+            <div class="card mr-2">
+                <img src="{{ videos[6]['thumbNail'] }}" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <div>
+                        <img style="border-radius: 50%; height: 40px; width: 40px; border: 1px solid black;"
+                            src="{{ videos[6]['channelLogo'] }}" class="card-img-top" alt="logo">
+                        <span class="ml-2" style="font-size: 20px;">{{ videos[6]['channelName'] }}</span>
+                    </div>
+                    <hr>
+                    <h5 class="card-title">{{ videos[6]['title'] }}</h5>
+                    <p class="card-text">
+                        {{ videos[6]['description'] }}
+                    </p>
+                    <div class="text-center">
+                        
+                        <a href="{{ url_for('show_video', video_id=videos[6]['videoId']) }}" class="btn btn-success">Watch Now</a>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <small class="text-muted">Published on: {{ videos[6]['publishedAt'] }}</small>
+                </div>
+            </div>
+            <div class="card mr-2">
+                <img src="{{ videos[7]['thumbNail'] }}" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <div>
+                        <img style="border-radius: 50%; height: 40px; width: 40px; border: 1px solid black;"
+                            src="{{ videos[7]['channelLogo'] }}" class="card-img-top" alt="logo">
+                        <span class="ml-2" style="font-size: 20px;">{{ videos[7]['channelName'] }}</span>
+                    </div>
+                    <hr>
+                    <h5 class="card-title">{{ videos[7]['title'] }}</h5>
+                    <p class="card-text">
+                        {{ videos[7]['description'] }}
+                    </p>
+                    <div class="text-center">
+                        
+                        <a href="{{ url_for('show_video', video_id=videos[7]['videoId']) }}" class="btn btn-success">Watch Now</a>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <small class="text-muted">Published on: {{ videos[7]['publishedAt'] }}</small>
+                </div>
+            </div>
+            <div class="card">
+                <img src="{{ videos[8]['thumbNail'] }}" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <div>
+                        <img style="border-radius: 50%; height: 40px; width: 40px; border: 1px solid black;"
+                            src="{{ videos[8]['channelLogo'] }}" class="card-img-top" alt="logo">
+                        <span class="ml-2" style="font-size: 20px;">{{ videos[8]['channelName'] }}</span>
+                    </div>
+                    <hr>
+                    <h5 class="card-title">{{ videos[8]['title'] }}</h5>
+                    <p class="card-text">
+                        {{ videos[8]['description'] }}
+                    </p>
+                    <div class="text-center">
+                        
+                        <a href="{{ url_for('show_video', video_id=videos[8]['videoId']) }}" class="btn btn-success">Watch Now</a>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <small class="text-muted">Published on: {{ videos[8]['publishedAt'] }}</small>
+                </div>
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-6">
+                {% if prev_page == "None" %}
+                <form class="text-right" method="POST">
+                    <input type="text" name="prev_page" value="{{ prev_page }}" hidden>
+                    <button class="btn btn-lg load-more" type="submit" disabled>Previous</button>
+                </form>
+                {% else %}
+                <form class="text-right" method="POST">
+                    <input type="text" name="prev_page" value="{{ prev_page }}" hidden>
+                    <button class="btn btn-lg load-more" type="submit">Previous</button>
+                </form>
+                {% endif %}
+            </div>
+
+            <div class="col-6">
+                {% if next_page == "None" %}
+                <form class="text-left" method="POST">
+                    <input type="text" name="next_page" value="{{ next_page }}" hidden>
+                    <button style="width: 110px;" class="btn btn-lg load-more" type="submit" disabled>Next</button>
+                </form>
+                {% else %}
+                <form class="text-left" method="POST">
+                    <input type="text" name="next_page" value="{{ next_page }}" hidden>
+                    <button style="width: 110px;" class="btn btn-lg load-more" type="submit">Next</button>
+                </form>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+
+</section>
+
+{% endif %}
+
+{% endblock %}

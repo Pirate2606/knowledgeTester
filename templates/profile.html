@@ -1,0 +1,92 @@
+{% extends 'base.html' %}
+
+{% block head %}
+
+<title>Profile | KnowledgeTester</title>
+<link href="{{ url_for('static', filename='css/styles.css') }}" rel='stylesheet'>
+
+{% endblock %}
+
+{% block body %}
+
+<div class="container mt-5">
+    <h2>Account</h2>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card profile-card shadow-lg my-3" style="width: 100%;">
+                <div class="card-body profile-card-body">
+                    <p class="text-black-50">Diplay Name</p>
+                    {% if user.google_name != None %}
+                    <strong>
+                        <p>{{ user.google_name }}</p>
+                    </strong>
+                    {% else %}
+                    <strong>
+                        <p>{{ user.user_name|capitalize }}</p>
+                    </strong>
+                    {% endif %}
+                </div>
+            </div>
+            <div class="card profile-card shadow-lg my-3" style="width: 100%;">
+                <div class="card-body profile-card-body d-flex justify-content-between">
+                    <div>
+                        <p class="text-black-50">Username</p>
+                        <strong>
+                            <p>@{{ user.user_name }}</p>
+                        </strong>
+                    </div>
+                </div>
+            </div>
+            <div class="card profile-card shadow-lg my-3" style="width: 100%;">
+                <div class="card-body profile-card-body d-flex justify-content-between">
+                    <div>
+                        <p class="text-black-50">Email</p>
+                        <strong>
+                            <p>{{ user.email }}</p>
+                        </strong>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card profile-card shadow-lg my-3" style="width: 100%; height: 45%;">
+                <div class="card-body profile-card-body text-center py-5">
+                    <h5 class="text-black-50 text-5">Videos watched</h5>
+                    <strong>
+                        <h1>{{ videos_count }}</h1>
+                    </strong>
+                </div>
+            </div>
+
+            <div class="card profile-card shadow-lg my-3" style="width: 100%; height: 45%;">
+                <div class="card-body profile-card-body text-center py-5">
+                    <h5 class="text-black-50 text-5">Total Correct Answers</h5>
+                    <strong>
+                        <h1>{{ correct }}</h1>
+                    </strong>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card profile-card shadow-lg my-3" style="width: 100%; height: 45%;">
+                <div class="card-body profile-card-body text-center py-5">
+                    <h5 class="text-black-50 text-5">Watch Later</h5>
+                    <strong>
+                        <h1>0</h1>
+                    </strong>
+                </div>
+            </div>
+
+            <div class="card profile-card shadow-lg my-3" style="width: 100%; height: 45%;">
+                <div class="card-body profile-card-body text-center py-5">
+                    <h5 class="text-black-50 text-5">Total Questions</h5>
+                    <strong>
+                        <h1>{{ total }}</h1>
+                    </strong>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

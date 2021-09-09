@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>Questions | KnowledgeTester</title> 
+<link href="{{ url_for('static', filename='css/styles.css') }}" rel="stylesheet">
+{% endblock %}
+
+{% block body %}
+
+<div class="container mb-5">
+    <h3 class="ml-4">Answer the following questions:</h3>
+    <form method="POST">
+        {% for question in questions %}
+        {% set parent = loop %}
+        <div class="card mt-4">
+            <h5 class="card-header">Question {{ loop.index }}:</h5>
+            <div class="card-body">
+                <h5 class="card-title">{{ question['question'] }}</h5>
+                <p class="card-text">
+                    {% for answer in question['answers'] %}
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="question{{ parent.index }}"
+                        id="question{{ parent.index }}{{ loop.index }}" value="{{ answer }}">
+                    <label class="form-check-label options" for="question{{ parent.index }}{{ loop.index }}">
+                        {{ answer|capitalize }}
+                    </label>
+                </div>
+                {% endfor %}
+                </p>
+            </div>
+        </div>
+        {% endfor %}
+        <div class="text-center mt-4">
+            <button type="submit" class="btn btn-lg btn-success">Submit</button>
+        </div>
+    </form>
+</div>
+
+
+{% endblock %}
